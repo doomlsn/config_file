@@ -1,0 +1,35 @@
+[user]
+	email = shinan_lu@apple.com
+	name = Shinan Lu
+[color]
+	ui = auto
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait -n $MERGED
+[diff]
+	tool = default-difftool
+[difftool "default-difftool"]
+	cmd = code --wait --diff -n $LOCAL $REMOTE
+[core]
+	excludesfile = /Users/slu/.gitignore_global
+	editor = code --wait
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[difftool]
+	prompt = false
+[alias]
+	st = status
+	co = checkout
+	df = difftool
+	cm = commit
+	sg = stage
+	last = log -1 -p
+	mg = mergetool
+	lg = log --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%cd%Creset %C(bold blue)<%an>%Creset %s' --abbrev-commit
+[format]
+	pretty = format:%Cred%h%Creset - %C(yellow)%cd%Creset %C(bold blue)<%an>%Creset %s
